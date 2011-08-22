@@ -1,0 +1,3 @@
+0 buttertaste.greatamerica.corp.yahoo.com:1700
+1 buttertaste.greatamerica.corp.yahoo.com:1701
+2 thosespent.greatamerica.corp.yahoo.com:1702

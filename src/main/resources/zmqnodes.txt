@@ -1,0 +1,18 @@
+#
+# There's one line for each partition, plus a line for the sender (indicated by a partition id of -1).
+# Each non-sender line has the following information:
+#    * the partition id (0-n, where n+1 is the number of partitions)
+#    * list of publishers of data intended for that partition. There should be as many publishers as there are
+#      partitions. In fact, each publisher itself is associated with a partition (since partitions are the source of
+#      keyed data). Each publisher listed has a prefix of "x>", where x is a partition id, that indicates the
+#      partition associated with that publisher.
+# The sender line has the following information:
+#    * a partition id of -1
+#    * a list of publishers provided by the sender. The sender has a publisher for each partition. A partition
+#      should subscribe to the publisher for its partition id (indicated by the prefix "x>", where x is a partition
+#      id). For each outgoing event, the sender will randomly choose a publisher on which to emit the event.
+#
+-1 0>thosespent.greatamerica.corp.yahoo.com:1600 1>thosespent.greatamerica.corp.yahoo.com:1601 2>thosespent.greatamerica.corp.yahoo.com:1602 
+0 0>buttertaste.greatamerica.corp.yahoo.com:1700 1>buttertaste.greatamerica.corp.yahoo.com:1701 2>thosespent.greatamerica.corp.yahoo.com:1702
+1 0>buttertaste.greatamerica.corp.yahoo.com:1800 1>buttertaste.greatamerica.corp.yahoo.com:1801 2>thosespent.greatamerica.corp.yahoo.com:1802
+2 0>buttertaste.greatamerica.corp.yahoo.com:1900 1>buttertaste.greatamerica.corp.yahoo.com:1901 2>thosespent.greatamerica.corp.yahoo.com:1902
